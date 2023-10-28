@@ -1,34 +1,41 @@
-let pronoun = ['the', 'our'];
-let adj = ['great', 'big'];
-let noun= ['jogger','racoon'];
-let ending = ['.com', '.dev']
+import  "./styles.css";
+import "bootstrap";
+import "./assets/img/rigo-babt.jpg";
+import "./assests/img/4geeks.ico";
 
-function genDomain(pronoun , adj, noun, ending){
-    return "www" + pronoun + adj + noun + ending
+let domain = [];
+window.onload = function() {
+    function genDomain(pronoun, adj, noun, ending) 
+    {
+        return "www." + pronoun + adj + noun + ending;
+    }
+
+}
+let pronoun = ["the", "our", "yours", "his", "her"];
+let adj = ["awesome", "amazing", "fantastic", "creative"];
+let noun= ["jogger","racoon", "idea","project,"];
+let ending = [".com", ".dev", ".net", ".org",];
+
+for (let pronoun of pronouns){
+    for (let adj of adjs) {
+        for (let noun of nouns) {
+            for(let ending of endings){
+                domain.push(genDomain(pronoun, adj, noun, ending));
+            }
+        }
+    }
 }
 
-pronouns.forEach((pron)=> {
-adjs.forEach((adj) => {
-nouns.forEach((noun)=> { 
-    endings.forEach((ending) => {
-        domain.push(genDomain(pron, adj,noun, ending));
-    });
+let domainList1 =
+document.getElementById("ul");
+console.log (domainList1)
+doamins.forEach((domain) => {
+    let domainItem =
+document.createElement("li");
+domainItem.innerText = domain;
+domainList1.appendChild(domainItem);
 });
-});
-});
-
-window.onload = function(){
-    let domainList=document.getElementsByTagName("u");
-    console.log(domainList);
-    domainList.forEach((domain)=> {
-        let domainItem= document.createElement("li");
-        domainItem.innertext =domain;
-        domainList[0].appendChild(domainItem);
-
-    });
-};
+console.log(domains);
 
 
-
-console.log(domain)
 
